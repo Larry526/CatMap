@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "FlickrPhoto.h"
+#import <MapKit/MapKit.h>
 
 @interface FlickrAPI : NSObject
 
 + (void)searchFor:(NSString*)tag complete:(void (^)(NSArray *results))done;
 
 + (void)loadImage:(FlickrPhoto*)photo completionHandler:(void (^)(UIImage *image))finishedCallback;
+
++ (void)getCoordinate:(NSString *)flickrID complete:(void (^)(CLLocationCoordinate2D))done;
+
 
 @end

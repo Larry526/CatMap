@@ -7,19 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+
 
 @interface FlickrPhoto : NSObject
 
 @property (nonatomic,strong) NSString *flickrID;
-@property (nonatomic,strong) NSString *serverID;
-@property (nonatomic,strong) NSString *farmID;
-@property (nonatomic,strong) NSString *secretID;
 @property (nonatomic,strong) NSString *title;
-
+@property (nonatomic,strong) NSURL *url;
+@property (nonatomic,assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic,strong) UIImage *image;
 
 - (instancetype)initWithInfo:(NSDictionary*)info;
 
-- (NSURL*)imageURL;
 
 @end

@@ -10,6 +10,7 @@
 #import "FlickrAPI.h"
 #import "FlickrPhoto.h"
 #import "CustomCollectionViewCell.h"
+#import "DetailViewController.h"
 
 @interface ViewController () <UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -35,6 +36,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.collectionView indexPathsForSelectedItems][0];
+        FlickrPhoto *flickrPhoto = self.photos[indexPath.item];
+        DetailViewController *controller = (DetailViewController*)[segue destinationViewController];
+        [controller setDetailPhoto:flickrPhoto];
+    }
+}
+
 #pragma mark - Collection View
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -55,7 +65,7 @@
 
     [FlickrAPI loadImage:photo completionHandler:^(UIImage *image) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    cell.image.image = image;
+            cell.image.image = image;
             cell.label.text = photo.title;
         }];
     }];
