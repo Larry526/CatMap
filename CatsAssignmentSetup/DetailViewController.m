@@ -23,10 +23,20 @@
     
     [FlickrAPI getCoordinate:self.detailPhoto.flickrID complete:^(CLLocationCoordinate2D results) {
         self.currentCoordinate = results;
-        NSLog(@"2nd - Coordinate are (%.4f, %.4f).",self.currentCoordinate.latitude, self.currentCoordinate.longitude);
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            MKCoordinateSpan span = MKCoordinateSpanMake(.5f, .5f);
+            self.mapView.region = MKCoordinateRegionMake(self.currentCoordinate, span);
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            [annotation setCoordinate:self.currentCoordinate];
+            [annotation setTitle:self.detailPhoto.title]; //You can set the subtitle too
+            [self.mapView addAnnotation:annotation];
+            
+        }];
+        
+        NSLog(@"Coordinate are (%.4f, %.4f).",self.currentCoordinate.latitude, self.currentCoordinate.longitude);
 
         }];
- NSLog(@"1st - Coordinate are (%.4f, %.4f).",self.currentCoordinate.latitude, self.currentCoordinate.longitude);
 
 }
 
