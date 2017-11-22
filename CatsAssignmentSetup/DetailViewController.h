@@ -12,6 +12,7 @@
 #import <MapKit/MapKit.h>
 
 
+
 @interface DetailViewController : UIViewController
 
 @property (nonatomic, strong) FlickrPhoto *detailPhoto;

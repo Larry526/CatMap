@@ -11,23 +11,20 @@
 #import "FlickrPhoto.h"
 #import "CustomCollectionViewCell.h"
 #import "DetailViewController.h"
+#import "SearchViewController.h"
 
-@interface ViewController () <UICollectionViewDataSource>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@interface ViewController () <UICollectionViewDataSource, FetchDataDelegate>
+@property (nonatomic,weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong) NSArray<FlickrPhoto*>* photos;
+@property (nonatomic,strong) NSString *searchTag;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [FlickrAPI searchFor:@"cats" complete:^(NSArray *results) {
-        self.photos = results;
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.collectionView reloadData];
-        }];
-    }];
+    [self fetchData:@"Cats"];
+    
 }
 
 
@@ -43,6 +40,21 @@
         DetailViewController *controller = (DetailViewController*)[segue destinationViewController];
         [controller setDetailPhoto:flickrPhoto];
     }
+    
+    if([[segue identifier] isEqualToString:@"fetch"]){
+        SearchViewController *controller = (SearchViewController *)[segue destinationViewController];
+        controller.delegate = self;
+    }
+}
+
+-(void)fetchData:(NSString *)fetchSearchString {
+    self.searchTag = fetchSearchString;
+    [FlickrAPI searchFor:fetchSearchString complete:^(NSArray *results) {
+        self.photos = results;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.collectionView reloadData];
+        }];
+    }];
 }
 
 #pragma mark - Collection View

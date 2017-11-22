@@ -10,6 +10,7 @@
 		0507D65F1FC4ACB500608B5B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0507D65E1FC4ACB500608B5B /* MapKit.framework */; };
 		0507D6621FC4AD5B00608B5B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0507D6611FC4AD5B00608B5B /* DetailViewController.m */; };
 		05E012381FC3E18100AFFA36 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E012371FC3E18100AFFA36 /* CustomCollectionViewCell.m */; };
+		05E1BD8D1FC4E5BF00F8F6E4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E1BD8C1FC4E5BF00F8F6E4 /* SearchViewController.m */; };
 		1A41FA8D1FC36E1900F58735 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A41FA8C1FC36E1900F58735 /* main.m */; };
 		1A41FA901FC36E1900F58735 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A41FA8F1FC36E1900F58735 /* AppDelegate.m */; };
 		1A41FA931FC36E1900F58735 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A41FA921FC36E1900F58735 /* ViewController.m */; };
@@ -26,6 +27,8 @@
 		0507D6611FC4AD5B00608B5B /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		05E012361FC3E18100AFFA36 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		05E012371FC3E18100AFFA36 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		05E1BD8B1FC4E5BF00F8F6E4 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		05E1BD8C1FC4E5BF00F8F6E4 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		1A41FA881FC36E1900F58735 /* CatsAssignmentSetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsAssignmentSetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A41FA8C1FC36E1900F58735 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1A41FA8E1FC36E1900F58735 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 			children = (
 				1A41FA911FC36E1900F58735 /* ViewController.h */,
 				1A41FA921FC36E1900F58735 /* ViewController.m */,
+				05E1BD8B1FC4E5BF00F8F6E4 /* SearchViewController.h */,
+				05E1BD8C1FC4E5BF00F8F6E4 /* SearchViewController.m */,
 				0507D6601FC4AD5B00608B5B /* DetailViewController.h */,
 				0507D6611FC4AD5B00608B5B /* DetailViewController.m */,
 			);
@@ -218,6 +223,7 @@
 				05E012381FC3E18100AFFA36 /* CustomCollectionViewCell.m in Sources */,
 				1A41FAA81FC371A300F58735 /* FlickrPhoto.m in Sources */,
 				1A41FA8D1FC36E1900F58735 /* main.m in Sources */,
+				05E1BD8D1FC4E5BF00F8F6E4 /* SearchViewController.m in Sources */,
 				0507D6621FC4AD5B00608B5B /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
